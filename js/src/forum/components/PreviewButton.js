@@ -4,14 +4,14 @@ import icon from 'flarum/helpers/icon';
 const modifierKey = navigator.userAgent.match(/Macintosh/) ? '⌘' : 'ctrl';
 
 export default class PreviewButton extends Component {
+
   config(isInitialized) {
     if (isInitialized) return;
-
     this.$().tooltip();
   }
 
   view() {
-    return <button className="Button Button--icon Button--link" title={this.title()} data-hotkey={this.props.hotkey}
+    return <button className="Button Button--icon" title={this.title()} data-hotkey={this.props.hotkey}
                    onclick={this.click.bind(this)} onkeydown={this.keydown.bind(this)}>
       {icon(this.props.icon)}
     </button>;
@@ -25,7 +25,7 @@ export default class PreviewButton extends Component {
   }
 
   click() {
-    return await;
+    return this.props.onclick();
   }
 
   title() {
