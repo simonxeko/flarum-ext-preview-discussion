@@ -1,0 +1,31 @@
+{
+  "name": "simonxeko/preview-discussion",
+  "description": "Preview the final output when editing a new discussion",
+  "keywords": [
+    "flarum"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": "^0.1.0-beta.8"
+  },
+  "authors": [],
+  "autoload": {
+    "psr-4": {
+      "Simonxeko\\PreviewDicussion\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Preview Discussion",
+      "icon": {
+        "name": "",
+        "backgroundColor": "",
+        "color": ""
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+    }
+  }
+}
