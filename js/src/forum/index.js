@@ -1,7 +1,6 @@
 import TextEditor from 'flarum/components/TextEditor';
 import ComposerBody from 'flarum/components/ComposerBody';
 import DiscussionComposer from 'flarum/components/DiscussionComposer';
-import PreviewButton from './components/PreviewButton';
 import { extend } from 'flarum/extend';
 
 app.initializers.add('simonxeko/preview-discussion', () => {
@@ -59,14 +58,4 @@ app.initializers.add('simonxeko/preview-discussion', () => {
       });
     }
   }, 300);
-  
-  /*extend(TextEditor.prototype, 'controlItems', function (items) {
-    const tooltip = name => app.translator.trans(`simonxeko-preview-discussion.forum.preview_tooltip`);
-    
-    // create and add the button
-    items.add('preview', 
-      <PreviewButton title={tooltip('preview')} icon="fas fa-eye" style={{ prefix: '### ' }} onclick={onClickPreview} />,
-    0);
-  });*/
-
 });
