@@ -156,11 +156,10 @@ app.initializers.add('simonxeko/preview-discussion', function () {
     // s9e.TextFormatter.preview($('#' + textareaId).val(), $('#preview-discussion')[0]);
   });
   Object(flarum_extend__WEBPACK_IMPORTED_MODULE_3__["extend"])(flarum_components_ComposerBody__WEBPACK_IMPORTED_MODULE_1___default.a.prototype, 'headerItems', function (items) {
-    items.add('preview-discussion', m("div", {
-      id: "preview-discussion",
-      "class": "Post-body",
-      style: "display: none; position: absolute; background: white; z-index: 99;"
-    }), 50);
+    items.add('preview-discussion', m("div#preview-discussion.Post-body", {
+      style: "display: none; position: absolute; background: white; z-index: 99;",
+      onclick: onClickPreview
+    }, ""), 50);
   });
   setInterval(function () {
     if ($('#' + textareaId).offset()) {
@@ -171,7 +170,7 @@ app.initializers.add('simonxeko/preview-discussion', function () {
         left: $('#' + textareaId).offset().left - $('.Composer').offset().left
       });
     }
-  }, 300);
+  }, 1000);
 });
 
 /***/ }),

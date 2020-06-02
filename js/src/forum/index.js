@@ -43,7 +43,10 @@ app.initializers.add('simonxeko/preview-discussion', () => {
 
   extend(ComposerBody.prototype, 'headerItems', function(items) {
     items.add('preview-discussion', 
-      <div id="preview-discussion" class="Post-body" style="display: none; position: absolute; background: white; z-index: 99;"></div>,
+      m("div#preview-discussion.Post-body", {
+        style: "display: none; position: absolute; background: white; z-index: 99;",
+        onclick: onClickPreview,
+      }, ""),
     50);
   });
 
@@ -56,5 +59,5 @@ app.initializers.add('simonxeko/preview-discussion', () => {
         left: $('#' + textareaId).offset().left - $('.Composer').offset().left,
       });
     }
-  }, 300);
+  }, 1000);
 });
