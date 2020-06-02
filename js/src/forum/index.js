@@ -4,7 +4,6 @@ import DiscussionComposer from 'flarum/components/DiscussionComposer';
 import { extend } from 'flarum/extend';
 
 app.initializers.add('simonxeko/preview-discussion', () => {
-  console.log('[simonxeko/preview-discussion] Hello, forum!');
 
   let index = 1;
   let textareaId = 'textarea1';
