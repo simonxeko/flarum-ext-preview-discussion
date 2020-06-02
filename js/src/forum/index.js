@@ -43,7 +43,7 @@ app.initializers.add('simonxeko/preview-discussion', () => {
 
   extend(ComposerBody.prototype, 'headerItems', function(items) {
     items.add('preview-discussion', 
-      <div id="preview-discussion" class="Post-body" style="display: none; position: absolute; background: white; z-index: 99;">TEST_PREVIEW</div>,
+      <div id="preview-discussion" class="Post-body" style="display: none; position: absolute; background: white; z-index: 99;"></div>,
     50);
   });
 
