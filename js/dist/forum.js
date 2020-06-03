@@ -132,9 +132,9 @@ app.initializers.add('simonxeko/preview-discussion', function () {
 
     if (previewMode) {
       s9e.TextFormatter.preview($('#' + textareaId).val(), $('#preview-discussion')[0]);
-      $('#preview-discussion').show();
+      $('#preview-discussion').show(); // $(".item-preview .Button").addClass('Button--danger');
     } else {
-      $('#preview-discussion').hide();
+      $('#preview-discussion').hide(); // $(".item-preview .Button").removeClass('Button--danger');
     }
   };
 
@@ -170,7 +170,7 @@ app.initializers.add('simonxeko/preview-discussion', function () {
         left: $('#' + textareaId).offset().left - $('.Composer').offset().left
       });
     }
-  }, 1000);
+  }, 300);
 });
 
 /***/ }),

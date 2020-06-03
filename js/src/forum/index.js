@@ -15,8 +15,10 @@ app.initializers.add('simonxeko/preview-discussion', () => {
     if (previewMode) {
       s9e.TextFormatter.preview($('#' + textareaId).val(), $('#preview-discussion')[0]);
       $('#preview-discussion').show();
+      // $(".item-preview .Button").addClass('Button--danger');
     } else {
       $('#preview-discussion').hide();
+      // $(".item-preview .Button").removeClass('Button--danger');
     }
   }
 
@@ -59,5 +61,5 @@ app.initializers.add('simonxeko/preview-discussion', () => {
         left: $('#' + textareaId).offset().left - $('.Composer').offset().left,
       });
     }
-  }, 1000);
+  }, 300);
 });
