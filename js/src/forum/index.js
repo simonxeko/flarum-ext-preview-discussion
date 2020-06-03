@@ -4,20 +4,22 @@ import DiscussionComposer from 'flarum/components/DiscussionComposer';
 import { extend } from 'flarum/extend';
 
 app.initializers.add('simonxeko/preview-discussion', () => {
-  console.log('[simonxeko/preview-discussion] Hello, forum!');
 
   let index = 1;
   let textareaId = 'textarea1';
   let previewMode = false;
-  
 
-  let onClickPreview = () => { 
+  const onClickPreview = (context) => { 
     previewMode = !previewMode;
     if (previewMode) {
       s9e.TextFormatter.preview($('#' + textareaId).val(), $('#preview-discussion')[0]);
       $('#preview-discussion').show();
+      // Add previewing class to to style {.item-preview .Button}
+      $('#composer').addClass("previewing");
     } else {
       $('#preview-discussion').hide();
+      $('#' + textareaId).focus();
+      $('#composer').removeClass("previewing");
     }
   }
 
@@ -44,7 +46,10 @@ app.initializers.add('simonxeko/preview-discussion', () => {
 
   extend(ComposerBody.prototype, 'headerItems', function(items) {
     items.add('preview-discussion', 
-      <div id="preview-discussion" class="Post-body" style="display: none; position: absolute; background: white; z-index: 99;">TEST_PREVIEW</div>,
+      m("div#preview-discussion.Post-body", {
+        style: "display: none; position: absolute; background: white; z-index: 99;",
+        onclick: onClickPreview,
+      }, ""),
     50);
   });
 

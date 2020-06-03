@@ -1,0 +1,22 @@
+
+// Add a watermark eye to the discussions preview
+#preview-discussion{
+	&:before{
+		content: "\f06e";
+		position: absolute;
+		color: #efefef;
+		font-family: 'Font Awesome 5 Free';
+		font-size: 6rem;
+		line-height: 1;
+		width: 100%;
+		text-align: center;
+		z-index: -10;
+	}
+}
+#composer.previewing
+{
+	.item-preview .Button
+	{
+		.Button--color(@control-danger-color, @control-danger-bg);
+	}
+}
