@@ -127,15 +127,18 @@ app.initializers.add('simonxeko/preview-discussion', function () {
   var textareaId = 'textarea1';
   var previewMode = false;
 
-  var onClickPreview = function onClickPreview() {
+  var onClickPreview = function onClickPreview(context) {
     previewMode = !previewMode;
 
     if (previewMode) {
       s9e.TextFormatter.preview($('#' + textareaId).val(), $('#preview-discussion')[0]);
-      $('#preview-discussion').show(); // $(".item-preview .Button").addClass('Button--danger');
+      $('#preview-discussion').show(); // Add previewing class to to style {.item-preview .Button}
+
+      $('#composer').addClass("previewing");
     } else {
       $('#preview-discussion').hide();
-      $('#' + textareaId).focus(); // $(".item-preview .Button").removeClass('Button--danger');
+      $('#' + textareaId).focus();
+      $('#composer').removeClass("previewing");
     }
   };
 

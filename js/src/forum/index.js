@@ -8,18 +8,18 @@ app.initializers.add('simonxeko/preview-discussion', () => {
   let index = 1;
   let textareaId = 'textarea1';
   let previewMode = false;
-  
 
-  let onClickPreview = () => { 
+  const onClickPreview = (context) => { 
     previewMode = !previewMode;
     if (previewMode) {
       s9e.TextFormatter.preview($('#' + textareaId).val(), $('#preview-discussion')[0]);
       $('#preview-discussion').show();
-      // $(".item-preview .Button").addClass('Button--danger');
+      // Add previewing class to to style {.item-preview .Button}
+      $('#composer').addClass("previewing");
     } else {
       $('#preview-discussion').hide();
       $('#' + textareaId).focus();
-      // $(".item-preview .Button").removeClass('Button--danger');
+      $('#composer').removeClass("previewing");
     }
   }
 
