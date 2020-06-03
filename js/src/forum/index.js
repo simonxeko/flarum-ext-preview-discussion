@@ -18,6 +18,7 @@ app.initializers.add('simonxeko/preview-discussion', () => {
       // $(".item-preview .Button").addClass('Button--danger');
     } else {
       $('#preview-discussion').hide();
+      $('#' + textareaId).focus();
       // $(".item-preview .Button").removeClass('Button--danger');
     }
   }

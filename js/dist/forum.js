@@ -134,7 +134,8 @@ app.initializers.add('simonxeko/preview-discussion', function () {
       s9e.TextFormatter.preview($('#' + textareaId).val(), $('#preview-discussion')[0]);
       $('#preview-discussion').show(); // $(".item-preview .Button").addClass('Button--danger');
     } else {
-      $('#preview-discussion').hide(); // $(".item-preview .Button").removeClass('Button--danger');
+      $('#preview-discussion').hide();
+      $('#' + textareaId).focus(); // $(".item-preview .Button").removeClass('Button--danger');
     }
   };
 
