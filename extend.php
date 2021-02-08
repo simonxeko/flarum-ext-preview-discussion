@@ -3,7 +3,7 @@
 /*
  * This file is part of simonxeko/preview-discussion.
  *
- * Copyright (c) 2020 simonxeko.
+ * Copyright (c) 2021 simonxeko & iPurpl3x.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -14,11 +14,8 @@ namespace Simonxeko\PreviewDicussion;
 use Flarum\Extend;
 
 return [
-    (new Extend\Frontend('forum'))
-        ->js(__DIR__.'/js/dist/forum.js')
-        ->css(__DIR__.'/resources/less/forum.less'),
-    (new Extend\Frontend('admin'))
-        ->js(__DIR__.'/js/dist/admin.js')
-        ->css(__DIR__.'/resources/less/admin.less'),
-    new Extend\Locales(__DIR__ . '/resources/locale')
+	(new Extend\Frontend('forum'))
+		->js(__DIR__ . '/js/dist/forum.js')
+		->css(__DIR__ . '/resources/less/forum.less'),
+	new Extend\Locales(__DIR__ . '/resources/locale')
 ];
