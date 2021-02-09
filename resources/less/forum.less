@@ -1,0 +1,17 @@
+.Composer {
+	.Composer-preview {
+		&.hidden {
+			display: none;
+		}
+		position: absolute; // size and position will be set by a jQuery function
+
+		z-index: 99; // Required to be able to scroll
+	}
+}
+
+.TextEditor {
+	textarea.hidden {
+		opacity: 0;
+		visibility: hidden;
+	}
+}

@@ -6,10 +6,25 @@
   ],
   "type": "flarum-extension",
   "license": "MIT",
-  "require": {
-    "flarum/core": "^0.1.0-beta.8"
+  "support": {
+    "issues": "hhttps://github.com/simonxeko/flarum-ext-preview-discussion",
+    "source": "https://github.com/simonxeko/flarum-ext-preview-discussion/issues",
+    "forum": "https://discuss.flarum.org/d/22636-preview-discussion-post-wip"
   },
-  "authors": [],
+  "require": {
+    "flarum/core": "^0.1.0-beta.15"
+  },
+  "authors": [
+    {
+      "name": "simonxeko",
+      "role": "Developer"
+    },
+    {
+      "name": "Rafael Horvat",
+      "email": "rafael.horvat@icloud.com",
+      "role": "Developer"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Simonxeko\\PreviewDicussion\\": "src/"
@@ -18,14 +33,15 @@
   "extra": {
     "flarum-extension": {
       "title": "Preview Discussion",
+      "category": "feature",
       "icon": {
-        "name": "",
+        "name": "fas fa-eye",
         "backgroundColor": "",
         "color": ""
       }
     },
     "flagrow": {
-      "discuss": ""
+      "discuss": "https://discuss.flarum.org/d/22636-preview-discussion-post-wip"
     }
   }
 }
